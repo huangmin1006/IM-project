@@ -5,23 +5,34 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:fast": "cross-env NEXT_TELEMETRY_DISABLED=1 NODE_ENV=production next build",
+    "build:win": "set NEXT_TELEMETRY_DISABLED=1 && set NODE_ENV=production && next build",
+    "build:analyze": "cross-env ANALYZE=true next build",
+    "build:time": "node scripts/time-build.mjs",
+    "build:ultra": "node scripts/time-build.mjs",
+    "build:turbo": "cross-env NEXT_TELEMETRY_DISABLED=1 NODE_ENV=production DISABLE_TYPESCRIPT=1 NEXT_SKIP_TYPECHECKING=1 NEXT_DISABLE_ESLINT=1 node --max-old-space-size=4096 ./node_modules/.bin/next build --no-lint",
+    "build:sonic": "cross-env NEXT_TELEMETRY_DISABLED=1 NODE_ENV=production DISABLE_TYPESCRIPT=1 NEXT_SKIP_TYPECHECKING=1 NEXT_DISABLE_ESLINT=1 NEXT_CACHE_LEVEL=aggressive NEXT_WEBPACK_DISABLE_STRICT_MODE=true NEXT_MINIMAL_BUILD=true NEXT_TURBO=true next build --no-lint",
+    "build:win-fast": "set NODE_OPTIONS=--max-old-space-size=4096 && set NEXT_TELEMETRY_DISABLED=1 && set NODE_ENV=production && set DISABLE_TYPESCRIPT=1 && set NEXT_SKIP_TYPECHECKING=1 && set NEXT_DISABLE_ESLINT=1 && set NEXT_MINIMAL_BUILD=true && next build --no-lint",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroui/react": "^2.7.5",
+    "framer-motion": "^12.5.0",
+    "next": "15.2.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.2.4"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "cross-env": "^7.0.3",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
