@@ -1,11 +1,11 @@
 "use client";
 
-import PhysicsScene from "@/components/PhysicsScene";
+import ParticleSystem from "@/components/ParticleSystem";
 
-export default function Home() {
+export default function ParticleDemo() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-0 m-0 overflow-hidden">
-      <PhysicsScene />
+      <ParticleSystem />
     </main>
   );
 }

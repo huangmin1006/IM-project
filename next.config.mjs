@@ -4,11 +4,15 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // 配置静态导出路径（可选）
-  // basePath: '',
+  // 修复静态导出路径问题
+  basePath: "",
+  assetPrefix: process.env.NODE_ENV === "production" ? "." : undefined,
   // 禁用 i18n 以确保静态导出正常工作
   i18n: undefined,
+  // 关键配置：使用相对路径
 
+  // 确保使用相对路径
+  trailingSlash: true,
   // 极简输出，不包含额外的信息
   compress: false, // 禁用压缩，加快构建速度
   generateEtags: false, // 禁用 ETag 生成

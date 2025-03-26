@@ -96,3 +96,60 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# 星空粒子系统与物理小球 Demo
+
+## 项目概述
+
+这是一个使用 Three.js 和 React 实现的交互式 3D 场景，展示了一个旋转的星空粒子系统以及可交互的物理小球系统。场景包含深色背景和随机浅色小球，通过鼠标点击可以创建具有物理特性的小球，并可以通过鼠标拖动控制星空旋转速度。
+
+## 功能特点
+
+### 交互维度
+
+- **物理小球点击生成**：点击场景任意位置即可创建物理小球
+- **实时重力模拟**：小球受到真实重力影响，会下落并相互碰撞
+- **精准射线碰撞**：使用 Three.js 射线检测实现精确的点击位置创建
+- **鼠标控制**：上下拖动鼠标可以调整星空旋转速度
+
+### 视觉效果
+
+- **旋转星空背景**：包含 5000 个粒子的星空系统
+- **随机浅色小球**：每个小球都有随机生成的浅色调
+- **深色背景**：深蓝色渐变背景与雾效果
+- **发光效果**：小球具有发光效果，在暗色背景中更加明显
+
+### 性能维度
+
+- **稳定 60FPS 动画**：优化的渲染循环保证流畅体验
+- **物理/渲染双线程协作**：物理计算与渲染分离
+- **GPU 高效利用率**：使用 BufferGeometry 优化性能
+- **内存管理**：适当的资源释放和清理
+
+## 技术实现
+
+- 使用 React 和 Next.js 构建前端框架
+- 使用 Three.js 实现 3D 渲染
+- 使用 Cannon-es 物理引擎实现物理模拟
+- 使用 React Three Fiber 简化 Three.js 与 React 的集成
+- 使用 HSL 颜色空间生成随机浅色
+- 使用射线检测实现精确的点击交互
+
+## 使用方法
+
+1. 点击场景任意位置创建随机浅色物理小球
+2. 上下拖动鼠标调整星空粒子系统的旋转速度
+3. 使用鼠标拖动来旋转和缩放整个场景视角
+4. 观察左上角显示的当前旋转速度和小球数量
+
+## 开发与运行
+
+```bash
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
+```
+
+访问 http://localhost:3000 即可查看效果。

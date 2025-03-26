@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星空粒子系统与物理小球Demo</title>
+    <link rel="stylesheet" href="./_next/static/css/app/layout.css" />
+    <script>
+        // 修复路径问题的辅助脚本
+        window.addEventListener('DOMContentLoaded', () => {
+            // 检测是否通过file://协议访问
+            if (window.location.protocol === 'file:') {
+                // 修复脚本路径
+                const scripts = document.querySelectorAll('script[src^="/_next"]');
+                scripts.forEach(script => {
+                    script.src = script.src.replace(/^\/_next/, './_next');
+                });
+
+                // 修复样式路径
+                const links = document.querySelectorAll('link[href^="/_next"]');
+                links.forEach(link => {
+                    link.href = link.href.replace(/^\/_next/, './_next');
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- 应用将在这里渲染 -->
+        <div
+            style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #050520; color: white;">
+            <p>加载中，请稍候...</p>
+        </div>
+    </div>
+
+    <!-- 脚本将由Next.js构建添加 -->
+    <script src="./_next/static/chunks/webpack.js"></script>
+    <script src="./_next/static/chunks/main.js"></script>
+    <script src="./_next/static/chunks/pages/_app.js"></script>
+    <script src="./_next/static/chunks/pages/index.js"></script>
+</body>
+
+</html>
