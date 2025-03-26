@@ -1,10 +1,10 @@
 "use client";
 
-import PhysicsScene from "@/components/PhysicsScene";
+import PhysicsScene from "./particle-demo/PhysicsScene";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-0 m-0 overflow-hidden">
+    <main className="w-full h-screen">
       <PhysicsScene />
     </main>
   );
